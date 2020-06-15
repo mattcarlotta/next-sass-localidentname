@@ -8,7 +8,7 @@ const regexEqual = (x, y) =>
 
 module.exports = {
   webpack(config) {
-    const sassRule = config.module.rules
+    const sassRules = config.module.rules
       .find((rule) => typeof rule.oneOf === "object")
       .oneOf.find(
         (rule) =>
@@ -16,7 +16,7 @@ module.exports = {
           regexEqual(rule.test, /\.module\.(scss|sass)$/)
       );
 
-    sassRule.use = sassRule.use.map((rule) =>
+    sassRules.use = sassRules.use.map((rule) =>
       rule.loader.includes("css-loader/dist")
         ? {
             ...rule,

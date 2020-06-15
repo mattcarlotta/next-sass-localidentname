@@ -1,1 +1,1 @@
-# NextJS Custom SCSS LocalIdentName
+# NextJS Custom SASS LocalIdentName
